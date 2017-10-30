@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.auth.models import User
+
 
 # Create your models here.
 
@@ -12,6 +14,7 @@ class TestModel(models.Model) :
 
 
 class Student(models.Model) :
+    user = models.OneToOneField(User)
     firstname = models.CharField(max_length=128)
     lastname = models.CharField(max_length=128)
     username = models.CharField(max_length=40)
@@ -35,6 +38,7 @@ class Student(models.Model) :
 
 
 class Mentor(models.Model) :
+    user = models.OneToOneField(User)
     firstname = models.CharField(max_length=128)
     lastname = models.CharField(max_length=128)
     username = models.CharField(max_length=40)
