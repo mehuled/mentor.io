@@ -26,7 +26,7 @@ def registerStudent(request) :
             return index(request)
         else:
             # The supplied form contained errors - just print them to the terminal.
-            print form.errors
+            print (form.errors)
     else:
         # If the request was not a POST, display the form to enter details.
         form = StudentForm()
@@ -53,7 +53,7 @@ def registerMentor(request) :
             return index(request)
         else:
             # The supplied form contained errors - just print them to the terminal.
-            print form.errors
+            print (form.errors)
     else:
         # If the request was not a POST, display the form to enter details.
         form = MentorForm()
