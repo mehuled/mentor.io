@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mentor</title>
+    </head>
+
+    <body>
+        <h1>Register as a student</h1>
+
+        <form id="student_form" method="post" action="/mentor/register_student/">
+
+            {% csrf_token %}
+            <table> {{ form.as_table }} </table>
+
+            <input type="submit" name="submit" value="Register" />
+        </form>
+    </body>
+
+</html>

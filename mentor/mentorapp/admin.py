@@ -1,3 +1,6 @@
 from django.contrib import admin
+from mentorapp.models import TestModel, Student, Mentor
 
-# Register your models here.
+admin.site.register(Student)
+admin.site.register(Mentor)
+admin.site.register(TestModel)
