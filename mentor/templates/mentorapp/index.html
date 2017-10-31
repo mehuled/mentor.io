@@ -104,7 +104,7 @@
 
 
 
-        <!-- Start: Sign Out Form
+        <!-- Start: Sign Up Form
         ================================== -->
         <div id="sign-up-form" class="sign-form modal fade" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
@@ -115,44 +115,105 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                     
-                    <form method="post" class="single-form" action="">
 
-                        <div class="col-xs-12 text-center">
-                            <h2 class="section-heading p-b-30">Sign Up</h2>
+                    <div class="col-xs-12 text-center">
+                        <h2 class="section-heading p-b-30">Sign Up</h2>
+                    </div>
+
+                    <div class="col-xs-12" style="margin-bottom: 15px">
+                        <ul class="nav nav-tabs">
+                            <li class="active" style="text-align: center;"><a data-toggle="pill" href="#mentor">As a Mentor</a></li>
+                            <li style="text-align: center;"><a data-toggle="pill"  href="#student">As a Student</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-content">
+                        <div id="mentor" class="tab-pane fade in active">
+                            <form class="single-form" id="mentor_form" method="post" action="/mentor/register_mentor/">
+                            {% csrf_token %}
+                                <div class="col-xs-12">
+                                    <!-- First Name -->
+                                    <input name="firstname" maxlength="128" class="contact-first-name form-control" type="text"  placeholder="First Name*" required="">
+                                </div>
+                                <div class="col-xs-12">
+                                    <!-- Last Name -->
+                                    <input name="lastname" maxlength="128" class="contact-last-name form-control" type="text" placeholder="Last Name*" required="">
+                                </div>
+                                <div class="col-xs-12">
+                                    <!-- Last Name -->
+                                    <input name="username" maxlength="50" class="contact-last-name form-control" type="text" placeholder="User Name*" required="">
+                                </div>
+                                <div class="col-xs-12">
+                                    <!-- Subject -->
+                                    <input name="password" class="contact-password form-control" type="password" placeholder="Password">
+                                </div>
+                                <div class="col-xs-12">
+                                    <!-- Subject -->
+                                    <input name="confirmPassword" class="contact-cmp-password form-control" type="password" placeholder="Confirm Password">
+                                </div>
+                                <div class="col-xs-12">
+                                    <!-- Email -->
+                                    <input name="email" maxlength="254" class="contact-email form-control" type="email" placeholder="Email*" required="">
+                                </div>
+                                <div class="col-xs-12">
+                                    <!-- Email -->
+                                    <input name="github" maxlength="128" class="contact-github form-control" type="text" placeholder="Github*" required="">
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="checkbox">
+                                        <input type="checkbox" id="agreement">
+                                        <label for="agreement">I agree to Your Terms of Service </label>
+                                    </div>
+                                </div>
+                                
+                                <!-- Subject Button -->
+                                <div class="btn-form text-center col-xs-12">
+                                    <button class="btn btn-fill">Sign Up</button>
+                                </div>
+                            </form>
                         </div>
 
-                        <div class="col-xs-12">
-                            <!-- First Name -->
-                            <input name="text" class="contact-first-name form-control" type="text" placeholder="First Name*" required="">
+                        <div id="student" class="tab-pane fade in">
+                            <form class="single-form" id="mentor_form" method="post" action="/mentor/register_student/">
+                            {% csrf_token %}
+                                <div class="col-xs-12">
+                                    <!-- First Name -->
+                                    <input name="firstname" maxlength="128" class="contact-first-name form-control" type="text"  placeholder="First Name*" required="">
+                                </div>
+                                <div class="col-xs-12">
+                                    <!-- Last Name -->
+                                    <input name="lastname" maxlength="128" class="contact-last-name form-control" type="text" placeholder="Last Name*" required="">
+                                </div>
+                                <div class="col-xs-12">
+                                    <!-- Last Name -->
+                                    <input name="username" maxlength="50" class="contact-last-name form-control" type="text" placeholder="User Name*" required="">
+                                </div>
+                                <div class="col-xs-12">
+                                    <!-- Subject -->
+                                    <input name="password" class="contact-password form-control" type="password" placeholder="Password">
+                                </div>
+                                <div class="col-xs-12">
+                                    <!-- Subject -->
+                                    <input name="confirmPassword" class="contact-cmp-password form-control" type="password" placeholder="Confirm Password">
+                                </div>
+                                <div class="col-xs-12">
+                                    <!-- Email -->
+                                    <input name="email" maxlength="254" class="contact-email form-control" type="email" placeholder="Email*" required="">
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="checkbox">
+                                        <input type="checkbox" id="agreement">
+                                        <label for="agreement">I agree to Your Terms of Service </label>
+                                    </div>
+                                </div>
+                                
+                                <!-- Subject Button -->
+                                <div class="btn-form text-center col-xs-12">
+                                    <button class="btn btn-fill">Sign Up</button>
+                                </div>
+                            </form>
                         </div>
-                        <div class="col-xs-12">
-                            <!-- Last Name -->
-                            <input name="text" class="contact-last-name form-control" type="text" placeholder="Last Name*" required="">
-                        </div>
-                        <div class="col-xs-12">
-                            <!-- Email -->
-                            <input name="email" class="contact-email form-control" type="email" placeholder="Email*" required="">
-                        </div>
-                        <div class="col-xs-12">
-                            <!-- Subject -->
-                            <input name="password" class="contact-password form-control" type="pass" placeholder="Password">
-                        </div>
-                        <div class="col-xs-12">
-                            <!-- Subject -->
-                            <input name="password" class="contact-cmp-password form-control" type="pass" placeholder="Confirm Password">
-                        </div>
-                        <div class="col-xs-12">
-                            <div class="checkbox">
-                                <input type="checkbox" id="agreement">
-                                <label for="agreement">I agree to Your Terms of Service </label>
-                            </div>
-                        </div>
-                        
-                        <!-- Subject Button -->
-                        <div class="btn-form text-center col-xs-12">
-                            <button class="btn btn-fill">Sign Up</button>
-                        </div>
-                    </form>
+                    </div>
 
                 </div><!-- End: .modal-content -->
             </div><!-- End: .modal-dialog -->
