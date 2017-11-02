@@ -74,9 +74,10 @@ def welcome(request):
         print('password is ' +i.password)
     user = myauthenticate(username=username, password=password)
     print(user)
-    
+
     if user is not None:
-        #auth.login(request,user) 
+        #auth.login(request,user)
+        #user.isAuthenticated = True
         return HttpResponseRedirect('/mentor')
     else:
         return HttpResponseRedirect('/mentor/failed')
@@ -89,20 +90,21 @@ def failed_login(request):
 def myauthenticate(username,password):
     context_list=Mentor.objects.all()
     flag=False
+    flag2 = False 
     for i in context_list :
         #   print(i.username)
         if(i.username==username):
 
-             flag = True 
-             user = i 
+             flag = True
+             user = i
              break
 
     if not flag:
-        print('Username not found') 
+        print('Username not found')
         return None
 
     elif user.password == password :
-        flag2 = True 
+        flag2 = True
 
 
     if flag == True and flag2 == True:
