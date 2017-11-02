@@ -1,6 +1,9 @@
-from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
+from django.contrib import auth
 from mentorapp.forms import StudentForm, MentorForm
+from mentorapp.models import Student, Mentor, TestModel
+
 
 def index(request):
     context_dict = {'boldmessage' : "I am a bold message"}
@@ -61,3 +64,46 @@ def registerMentor(request) :
     # Bad form (or form details), no form supplied...
     # Render the form with error messages (if any).
     return render(request, 'mentorapp/registerMentor.html', {'form': form})
+
+def welcome(request):
+    context_list=Mentor.objects.all()
+    username = request.POST.get('user')
+    password = request.POST.get('pass')
+    for i in context_list :
+        print('username is ' + i.username)
+        print('password is ' +i.password)
+    user = myauthenticate(username=username, password=password)
+    print(user)
+    
+    if user is not None:
+        #auth.login(request,user) 
+        return HttpResponseRedirect('/mentor')
+    else:
+        return HttpResponseRedirect('/mentor/failed')
+
+
+def failed_login(request):
+    context_list={}
+    return render(request,"mentorapp/successful.html",context_list)
+
+def myauthenticate(username,password):
+    context_list=Mentor.objects.all()
+    flag=False
+    for i in context_list :
+        #   print(i.username)
+        if(i.username==username):
+
+             flag = True 
+             user = i 
+             break
+
+    if not flag:
+        print('Username not found') 
+        return None
+
+    elif user.password == password :
+        flag2 = True 
+
+
+    if flag == True and flag2 == True:
+        return user

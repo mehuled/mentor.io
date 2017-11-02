@@ -67,19 +67,19 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                     
-                    <form method="post" class="single-form" action="">
-
+                    <form method="post" class="single-form" action="/mentor/login/">
+			  {% csrf_token %}
                         <div class="col-xs-12 text-center">
                             <h2 class="section-heading p-b-30">Sign In</h2>
                         </div>
 
                         <div class="col-xs-12">
                             <!-- Email -->
-                            <input name="email" class="contact-email form-control" type="email" placeholder="Email*" required="">
+                            <input name="user" class="contact-email form-control" type="text" placeholder="username" required="">
                         </div>
                         <div class="col-xs-12">
                             <!-- Subject -->
-                            <input name="password" class="contact-password form-control" type="pass" placeholder="Password">
+                            <input name="pass" class="contact-password form-control" type="password" placeholder="Password" required>
                         </div>
 
                         <div class="col-xs-12">

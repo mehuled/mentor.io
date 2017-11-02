@@ -6,5 +6,6 @@ urlpatterns = [
         url(r'^about/', views.about, name='about'),
         url(r'^register_student/$', views.registerStudent, name='registerStudent'), # NEW MAPPING!
         url(r'^register_mentor/$', views.registerMentor, name='registerMentor'), # NEW MAPPING!
-
+        url(r'^failed/$', views.failed_login, name='failed_login'), 
+        url(r'^login/$', views.welcome, name='welcome'), 
 ]
