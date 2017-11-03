@@ -78,7 +78,7 @@ def welcome(request):
     if user is not None:
         #auth.login(request,user)
         #user.isAuthenticated = True
-        return HttpResponseRedirect('/mentor')
+        return HttpResponseRedirect('/mentor/home')
     else:
         return HttpResponseRedirect('/mentor/failed')
 
@@ -109,3 +109,9 @@ def myauthenticate(username,password):
 
     if flag == True and flag2 == True:
         return user
+
+
+def home(request) :
+    context_dict = {}
+    return render(request, 'mentorapp/home.html',context_dict)
+
