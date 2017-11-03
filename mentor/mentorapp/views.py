@@ -110,7 +110,6 @@ def myauthenticate(username,password):
     if flag == True and flag2 == True:
         return user
 
-
 def home(request):
     context_list={}
 
