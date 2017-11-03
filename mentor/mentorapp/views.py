@@ -77,8 +77,8 @@ def welcome(request):
 
     if user is not None:
         #auth.login(request,user)
-        #user.isAuthenticated = True
-        return HttpResponseRedirect('/mentor')
+        user.isAuthenticated = True
+        return HttpResponseRedirect('/mentor/home')
     else:
         return HttpResponseRedirect('/mentor/failed')
 
@@ -90,7 +90,7 @@ def failed_login(request):
 def myauthenticate(username,password):
     context_list=Mentor.objects.all()
     flag=False
-    flag2 = False 
+    flag2 = False
     for i in context_list :
         #   print(i.username)
         if(i.username==username):
@@ -109,3 +109,55 @@ def myauthenticate(username,password):
 
     if flag == True and flag2 == True:
         return user
+
+
+def home(request):
+    context_list={}
+
+    current = None
+    for i in Mentor.objects.all() :
+        if i.isAuthenticated==True :
+            current = i
+            break
+
+    if current is None :
+        for i in Student.objects.all() :
+            if i.isAuthenticated==True :
+                current = i
+                break
+
+    context_list = {'user' : current}
+
+    return render(request,"mentorapp/home.html",context_list)
+
+
+def apply(request):
+    context_list={}
+    return render(request,"mentorapp/apply.html",context_list)
+
+def search(request):
+    context_list={}
+
+    key = request.POST.get('key')
+
+    mentor_list = Mentor.objects.all()
+
+    li = []
+    for ob in mentor_list :
+        if(ob.tag==key) :
+            li.append(ob)
+
+    context_list = {'results' : li}
+
+    return render(request,"mentorapp/search.html",context_list)
+
+def logout(request) :
+    for i in Mentor.objects.all() :
+        i.isAuthenticated=False
+
+    for i  in Student.objects.all() :
+        i.isAuthenticated = False
+
+    context_dict = {}
+
+    return render(request,"mentorapp/index.html",context_dict)

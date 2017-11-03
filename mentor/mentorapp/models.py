@@ -22,7 +22,8 @@ class Student(models.Model) :
     password = models.CharField(max_length=128)
     confirmPassword = models.CharField(max_length=128)
     isAStudent = models.BooleanField()
-    #isAuthenticated = models.BooleanField(default=False)
+
+    isAuthenticated = models.BooleanField(default=False)
 
 
     aboutYourself = models.TextField(max_length=500)
@@ -48,8 +49,9 @@ class Mentor(models.Model) :
     aboutYourself = models.TextField(max_length=500)
     github = models.CharField(max_length=128)
     website = models.CharField(max_length=128)
+    tag = models.CharField(max_length=100)
     #usersince = models.DateTimeField()
-    #isAuthenticated = models.BooleanField(default=False)
+    isAuthenticated = models.BooleanField(default=False)
 
     def __str__(self) :
         return self.firstname
