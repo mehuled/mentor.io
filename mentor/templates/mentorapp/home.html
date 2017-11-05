@@ -30,7 +30,7 @@
         <header id="header" class="okayNav-header navbar-fixed-top main-navbar-top">
             <div class="container">
                 <div class="row">
-                    
+
                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 
                         <a class="okayNav-header__logo navbar-brand" href="#">
@@ -76,7 +76,7 @@
                             <div class="part-inner text-center">
 
                                 <!--  Header SubTitle Goes here -->
-                                <h1 class="title">Hello Jane Bishop!</h1>
+                                <h1 class="title">Hello {{ user.firstname }}!</h1>
 
                             </div>
                         </div> <!-- End: .part-1 -->
@@ -98,20 +98,20 @@
         <div class="text-center">
           <img src="{% static 'images/mandp.png' %}" class="avatar img-circle" alt="avatar">
           <h6>Upload a different photo...</h6>
-          
+
           <input class="form-control" type="file">
         </div>
       </div>
-      
+
       <!-- edit form column -->
       <div class="col-md-9 personal-info">
         <div class="alert alert-info alert-dismissable">
-          <a class="panel-close close" data-dismiss="alert">×</a> 
+          <a class="panel-close close" data-dismiss="alert">×</a>
           <i class="fa fa-coffee"></i>
           This is an <strong>.alert</strong>. Use this to show important messages to the user.
         </div>
         <h3>Personal info</h3>
-        
+
         <form class="form-horizontal" role="form">
           <div class="form-group">
             <label class="col-lg-3 control-label">First name:</label>
@@ -196,7 +196,7 @@
 
                     <div class="footer-header">
                         <div class="section-separator">
-                            
+
                             <div class="each-section col-sm-3 col-xs-12">
 
                                 <p class="title"><strong>Expert Help </strong></p>
@@ -228,10 +228,10 @@
                                     <li><a href="mailto:Contact@archer.com">Contact@mentor.io</a></li>
                                     <li><a href="#">Locate on Google Map</a></li>
                                 </ul>
-                                
+
                             </div> <!-- End: .each-section -->
                             <div class="each-section vertical-bottom col-sm-3 col-xs-12">
-                                
+
                                 <ul class="nav">
                                     <li>
                                         <div class="li-inner">
@@ -244,7 +244,7 @@
                                         </div>
                                     </li>
                                 </ul>
-                                
+
                             </div> <!-- End: .each-section -->
 
                         </div>
@@ -274,13 +274,13 @@
         <a href="{% static 'docs/overview.pdf' %}">View Project Overview</a><br/>
  -->
 
-         <!-- SCRIPTS 
+         <!-- SCRIPTS
         ========================================-->
-        <script src="{% static 'js/plagin-js/jquery-1.11.3.js' %}"></script> 
+        <script src="{% static 'js/plagin-js/jquery-1.11.3.js' %}"></script>
         <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
-        <script src="{% static 'js/plagin-js/plagin.js' %}"></script> 
+        <script src="{% static 'js/plagin-js/plagin.js' %}"></script>
 
-        <!-- Custom Script 
+        <!-- Custom Script
         ==========================================-->
         <script src="{% static 'js/custom-scripts.js' %}"></script>
 

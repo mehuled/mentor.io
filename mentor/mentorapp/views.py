@@ -78,14 +78,15 @@ def welcome(request):
     if user is not None:
         #auth.login(request,user)
         user.isAuthenticated = True
-        return HttpResponseRedirect('/mentor/home')
+        context_list = {'user' : user}
+        return render(request,"mentorapp/home.html",context_list)
     else:
         return HttpResponseRedirect('/mentor/failed')
 
 
 def failed_login(request):
     context_list={}
-    return render(request,"mentorapp/successful.html",context_list)
+    return render(request,"mentorapp/failed.html",context_list)
 
 def myauthenticate(username,password):
     context_list=Mentor.objects.all()
