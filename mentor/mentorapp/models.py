@@ -49,7 +49,9 @@ class Mentor(models.Model) :
     aboutYourself = models.TextField(max_length=500)
     github = models.CharField(max_length=128)
     website = models.CharField(max_length=128)
-    tag = models.CharField(max_length=100)
+    tag1 = models.CharField(max_length=100)
+    tag2 = models.CharField(max_length=100)
+    tag3 = models.CharField(max_length=100)
     #usersince = models.DateTimeField()
     isAuthenticated = models.BooleanField(default=False)
 
