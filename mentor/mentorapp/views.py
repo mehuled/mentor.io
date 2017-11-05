@@ -36,7 +36,7 @@ def registerStudent(request) :
 
     # Bad form (or form details), no form supplied...
     # Render the form with error messages (if any).
-    return render(request, 'mentorapp/registerStudent.html', {'form': form})
+    return render(request, 'mentorapp/index.html', {'form': form, 'valid' : False})
 
 
 
@@ -63,7 +63,8 @@ def registerMentor(request) :
 
     # Bad form (or form details), no form supplied...
     # Render the form with error messages (if any).
-    return render(request, 'mentorapp/registerMentor.html', {'form': form})
+
+    return render(request, 'mentorapp/index.html', {'form': form, 'valid' : False})
 
 def welcome(request):
     context_list=Mentor.objects.all()

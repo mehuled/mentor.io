@@ -21,8 +21,8 @@ class StudentForm(forms.ModelForm) :
     class Meta:
         # Provide an association between the ModelForm and a model
         model = Student
-        fields = ('firstname','lastname','username','password','confirmPassword','email','isAStudent','aboutYourself')
-        exclude = ('usersince',)
+        fields = ('firstname','lastname','username','password','confirmPassword','email')
+
 
 
 class MentorForm(forms.ModelForm) :
@@ -37,5 +37,5 @@ class MentorForm(forms.ModelForm) :
     class Meta:
         # Provide an association between the ModelForm and a model
         model = Mentor
-        fields = ('firstname','lastname','username','tag1','tag2','tag3','password','confirmPassword','email','github')
+        fields = ('firstname','lastname','username','password','confirmPassword','email','github')
         exclude = ('usersince',)
