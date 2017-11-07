@@ -10,7 +10,7 @@ urlpatterns = [
         url(r'^home/$', views.home, name='home'),# create this one
         url(r'^search/$', views.search, name='search'), # create this one
         url(r'^apply/$', views.apply, name='apply'),  #create this one
-        url(r'^login/$', views.welcome, name='welcome'),
+        url(r'^home/$', views.welcome, name='welcome'),
         url(r'^logout/$', views.logout, name='logout'),
         url(r'^home/', views.home, name='home'),
 ]

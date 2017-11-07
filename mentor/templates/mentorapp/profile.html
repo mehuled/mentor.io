@@ -28,7 +28,7 @@
 
 
     <body class="">
-        <header class="okayNav-header navbar-fixed-top main-navbar-top" style="background-color: #003648">
+        <header id="header" class="okayNav-header navbar-fixed-top main-navbar-top" style="background-color: #003648">>
             <div class="container">
                 <div class="row">
 
@@ -57,7 +57,8 @@
                             <ul id="navbar-nav" class="navbar-nav">
                                 <li><a class="btn-nav" href="/mentor/home">Home</a></li>
                                 <li style="display: flex"><img src="{% static 'images/man.png' %}" class="img-circle img-responsive" alt="Profile Avatar"><a class="btn-nav" href="/mentor/profile">Profile</a></li>
-                                <li><a class="btn-nav" href="/mentor/home"><i class="fa fa-bell" aria-hidden="true"></i></a></li>
+                                <li class="dropdown"><a href="#" class="dropdown-toggle btn-nav" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-bell" aria-hidden="true"></i>(<b>2</b>)</a>
+                                </li>
                                 <li><a class="btn-nav btn-border" href="/mentor">Log Out</a></li>
                             </ul>
                         </nav>
@@ -68,93 +69,104 @@
         </header><!-- /header -->
 
 <section class="features-section-1 relative background-light">
-                    <div class="row section-separator">
-
-<div class="navbar navbar-inverse navbar-fixed-left" style="margin-left: 13px; margin-right: 13px">
-    <!-- <a class="navbar-brand" href="#">Tags</a> -->
-    <h2 style="margin-left: 10px">Tags</h2>
-  <ul class="nav navbar-nav">
-  <!--  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
-     <ul class="dropdown-menu" role="menu">
-      <li><a href="#">Sub Menu1</a></li>
-      <li><a href="#">Sub Menu2</a></li>
-      <li><a href="#">Sub Menu3</a></li>
-      <li class="divider"></li>
-      <li><a href="#">Sub Menu4</a></li>
-      <li><a href="#">Sub Menu5</a></li>
-     </ul>
-   </li> -->
-   <li><a href="#">Artificial Intelligence</a></li>
-   <li><a href="#">Machine Learning</a></li>
-   <li><a href="#">Competitive Programming</a></li>
-   <li><a href="#">Web Development</a></li>
-  </ul>
-</div>
+<div class="row section-separator" style="margin-top: 25px;">
 <div class="container">
- <div class="row" style="display: flex; flex-flow: column nowrap; margin-top: 25px">
-   <h2 style="margin: auto">Search for Mentors </h2><hr>
-   
-        <div class="col-xs-12" style="margin: auto">
-                <div class="card card-inverse card-info">
-                    <div class="card-block">
-                        <figure class="profile profile-inline" style="margin-top: 10px">
-                            <img src="http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif" class="profile-avatar" alt="">
-                        </figure>
-                        <h4 class="card-title">Tawshif Ahsan Khan</h4>
-                        <div class="card-text">
-                            Tawshif is a web designer living in Bangladesh.
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <small>Fees: 25$ per day</small>
-                        <button class="btn btn-info float-right" style=" margin-left: 5px;padding: 5px; float: right;">Hire</button>
-                        <button class="btn btn-info float-right" style=" padding: 5px; float: right;">Chat</button>
-                    </div>
-                </div>
-            </div>
-            <hr>
-        <div class="col-xs-12" style="margin: auto">
-                <div class="card card-inverse card-info">
-                    <div class="card-block">
-                        <figure class="profile profile-inline" style="margin-top: 10px">
-                            <img src="http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif" class="profile-avatar" alt="">
-                        </figure>
-                        <h4 class="card-title">Tawshif Ahsan Khan</h4>
-                        <div class="card-text">
-                            Tawshif is a web designer living in Bangladesh.
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <small>Fees: 25$ per day</small>
-                        <button class="btn btn-info float-right" style=" margin-left: 5px;padding: 5px; float: right; ">Hire</button>
-                        <button class="btn btn-info float-right" style=" padding: 5px; float: right;">Chat</button>
-                    </div>
-                </div>
-            </div>
-            <hr>
-        <div class="col-xs-12" style="margin: auto">
-                <div class="card card-inverse card-info">
-                    <div class="card-block">
-                        <figure class="profile profile-inline" style="margin-top: 10px">
-                            <img src="http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif" class="profile-avatar" alt="">
-                        </figure>
-                        <h4 class="card-title">Tawshif Ahsan Khan</h4>
-                        <div class="card-text">
-                            Tawshif is a web designer living in Bangladesh.
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                       <small>Fees: 25$ per day</small>
-                        <button class="btn btn-info float-right" style="margin-left: 5px;padding: 5px; float: right;">Hire</button>
-                        <button class="btn btn-info float-right" style=" padding: 5px; float: right;">Chat</button>
-                    </div>
-                </div>
-            </div>
- </div>
-</div>
+    <h1>Edit Profile</h1>
+    <hr>
+    <div class="row">
+      <!-- left column -->
+      <div class="col-md-3">
+        <div class="text-center">
+          <img src="{% static 'images/mandp.png' %}" class="avatar img-circle" alt="avatar">
+          <h6>Upload a different photo...</h6>
 
-                    </div> <!-- End: .row -->
-            <hr>
+          <input class="form-control" type="file" style="margin-bottom: 5px; text-align: center;">
+        </div>
+      </div>
+
+      <!-- edit form column -->
+      <div class="col-md-9 personal-info">
+        <div class="alert alert-info alert-dismissable">
+          <a class="panel-close close" data-dismiss="alert">×</a>
+          <i class="fa fa-coffee"></i>
+          This is an <strong>.alert</strong>. Use this to show important messages to the user.
+        </div>
+        <h3>Personal info</h3>
+
+        <form class="form-horizontal" role="form">
+          <div class="form-group">
+            <label class="col-lg-3 control-label">First name:</label>
+            <div class="col-lg-8">
+              <input class="form-control" value="Jane" type="text">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Last name:</label>
+            <div class="col-lg-8">
+              <input class="form-control" value="Bishop" type="text">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Company:</label>
+            <div class="col-lg-8">
+              <input class="form-control" value="" type="text">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Email:</label>
+            <div class="col-lg-8">
+              <input class="form-control" value="janesemail@gmail.com" type="text">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Time Zone:</label>
+            <div class="col-lg-8">
+              <div class="ui-select">
+                <select id="user_time_zone" class="form-control">
+                  <option value="Hawaii">(GMT-10:00) Hawaii</option>
+                  <option value="Alaska">(GMT-09:00) Alaska</option>
+                  <option value="Pacific Time (US &amp; Canada)">(GMT-08:00) Pacific Time (US &amp; Canada)</option>
+                  <option value="Arizona">(GMT-07:00) Arizona</option>
+                  <option value="Mountain Time (US &amp; Canada)">(GMT-07:00) Mountain Time (US &amp; Canada)</option>
+                  <option value="Central Time (US &amp; Canada)" selected="selected">(GMT-06:00) Central Time (US &amp; Canada)</option>
+                  <option value="Eastern Time (US &amp; Canada)">(GMT-05:00) Eastern Time (US &amp; Canada)</option>
+                  <option value="Indiana (East)">(GMT-05:00) Indiana (East)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Username:</label>
+            <div class="col-md-8">
+              <input class="form-control" value="janeuser" type="text">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Password:</label>
+            <div class="col-md-8">
+              <input class="form-control" value="11111122333" type="password">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Confirm password:</label>
+            <div class="col-md-8">
+              <input class="form-control" value="11111122333" type="password">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label"></label>
+            <div class="col-md-8">
+              <input class="btn btn-primary" style="padding: 5px;" value="Save Changes" type="button">
+              <span></span>
+              <input class="btn btn-default" value="Cancel" type="reset">
+            </div>
+          </div>
+        </form>
+      </div>
+  </div>
+</div>
+</div>
+<hr>
 </section>
 <div class="chatbox chatbox--tray chatbox--empty" style="z-index: 1000">
     <div class="chatbox__title">
@@ -207,6 +219,8 @@
     <textarea class="chatbox__message" placeholder="Write something interesting"></textarea>
 </div>
     </body>
+        <!-- End: Footer Section 1
+        ================================== -->
 
 
 

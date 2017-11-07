@@ -1691,3 +1691,361 @@ h6 {
     .search-query:focus + button {
         z-index: 3;   
     }
+
+    .navbar-fixed-left {
+  width: 140px;
+  position: fixed;
+  border-radius: 0;
+  height: 100%;
+}
+
+.navbar-fixed-left .navbar-nav > li {
+  float: none;  /* Cancel default li float: left */
+  width: 139px;
+}
+
+.navbar-fixed-left + .container {
+  padding-left: 160px;
+}
+
+/* On using dropdown menu (To right shift popuped) */
+.navbar-fixed-left .navbar-nav > li > .dropdown-menu {
+  margin-top: -50px;
+  margin-left: 140px;
+}
+
+html {
+    font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+h5 {
+    font-size: 1.28571429em;
+    font-weight: 700;
+    line-height: 1.2857em;
+    margin: 0;
+}
+
+.card {
+    font-size: 1em;
+    overflow: hidden;
+    padding: 0;
+    border: none;
+    border-radius: .28571429rem;
+    box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+}
+
+.card-block {
+    font-size: 1em;
+    position: relative;
+    margin: 0;
+    padding: 1em;
+    border: none;
+    border-top: 1px solid rgba(34, 36, 38, .1);
+    box-shadow: none;
+}
+
+.card-img-top {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.card-title {
+    font-size: 1.28571429em;
+    font-weight: 700;
+    line-height: 1.2857em;
+}
+
+.card-text {
+    clear: both;
+    margin-top: .5em;
+    color: rgba(0, 0, 0, .68);
+}
+
+.card-footer {
+    font-size: 1em;
+    position: static;
+    top: 0;
+    left: 0;
+    max-width: 100%;
+    padding: .75em 1em;
+    color: rgba(0, 0, 0, .4);
+    border-top: 1px solid rgba(0, 0, 0, .05) !important;
+    background: #fff;
+}
+
+.card-inverse .btn {
+    border: 1px solid rgba(0, 0, 0, .05);
+}
+
+.profile {
+    position: absolute;
+    top: -12px;
+    display: inline-block;
+    overflow: hidden;
+    box-sizing: border-box;
+    width: 35px;
+    height: 35px;
+    margin: 0;
+    border: 1px solid #fff;
+    border-radius: 50%;
+}
+
+.profile-avatar {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+.profile-inline {
+    position: relative;
+    top: 0;
+    display: inline-block;
+}
+
+.profile-inline ~ .card-title {
+    display: inline-block;
+    margin-left: 4px;
+    vertical-align: top;
+}
+
+.text-bold {
+    font-weight: 700;
+}
+
+.meta {
+    font-size: 1em;
+    color: rgba(0, 0, 0, .4);
+}
+
+.meta a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, .4);
+}
+
+.meta a:hover {
+    color: rgba(0, 0, 0, .87);
+}
+
+.chatbox {
+    position: fixed;
+    bottom: 0;
+    right: 30px;
+    width: 300px;
+    height: 400px;
+    background-color: #fff;
+    font-family: 'Lato', sans-serif;
+
+    -webkit-transition: all 600ms cubic-bezier(0.19, 1, 0.22, 1);
+    transition: all 600ms cubic-bezier(0.19, 1, 0.22, 1);
+
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-direction: column;
+    flex-direction: column;
+}
+
+.chatbox--tray {
+    bottom: -350px;
+}
+
+.chatbox--closed {
+    bottom: -400px;
+}
+
+.chatbox .form-control:focus {
+    border-color: #1f2836;
+}
+
+.chatbox__title,
+.chatbox__body {
+    border-bottom: none;
+}
+
+.chatbox__title {
+    min-height: 50px;
+    padding-right: 10px;
+    background-color: #1f2836;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    cursor: pointer;
+
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.chatbox__title h5 {
+    height: 50px;
+    margin: 0 0 0 15px;
+    line-height: 50px;
+    position: relative;
+    padding-left: 20px;
+
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+}
+
+.chatbox__title h5 a {
+    color: #fff;
+    max-width: 195px;
+    display: inline-block;
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.chatbox__title h5:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    background: #4CAF50;
+    border-radius: 6px;
+
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.chatbox__title__tray,
+.chatbox__title__close {
+    width: 24px;
+    height: 24px;
+    outline: 0;
+    border: none;
+    background-color: transparent;
+    opacity: 0.5;
+    cursor: pointer;
+
+    -webkit-transition: opacity 200ms;
+    transition: opacity 200ms;
+}
+
+.chatbox__title__tray:hover,
+.chatbox__title__close:hover {
+    opacity: 1;
+}
+
+.chatbox__title__tray span {
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    border-bottom: 2px solid #fff
+}
+
+.chatbox__title__close svg {
+    vertical-align: middle;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.2px;
+}
+
+.chatbox__body,
+.chatbox__credentials {
+    padding: 15px;
+    border-top: 0;
+    background-color: #f5f5f5;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+}
+
+.chatbox__credentials {
+    display: none;
+}
+
+.chatbox__credentials .form-control {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.chatbox__body {
+    overflow-y: auto;
+}
+
+.chatbox__body__message {
+    position: relative;
+}
+
+.chatbox__body__message p {
+    padding: 15px;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #fff;
+    -webkit-box-shadow: 1px 1px rgba(100, 100, 100, 0.1);
+    box-shadow: 1px 1px rgba(100, 100, 100, 0.1);
+}
+
+.chatbox__body__message img {
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    border: 2px solid #fcfcfc;
+    position: absolute;
+    top: 15px;
+}
+
+.chatbox__body__message--left p {
+    margin-left: 15px;
+    padding-left: 30px;
+    text-align: left;
+}
+
+.chatbox__body__message--left img {
+    left: -5px;
+}
+
+.chatbox__body__message--right p {
+    margin-right: 15px;
+    padding-right: 30px;
+    text-align: right;
+}
+
+.chatbox__body__message--right img {
+    right: -5px;
+}
+
+.chatbox__message {
+    padding: 15px;
+    min-height: 50px;
+    outline: 0;
+    resize: none;
+    border: none;
+    font-size: 12px;
+    border: 1px solid #ddd;
+    border-bottom: none;
+    background-color: #fefefe;
+}
+
+.chatbox--empty {
+    height: 262px;
+}
+
+.chatbox--empty.chatbox--tray {
+    bottom: -212px;
+}
+
+.chatbox--empty.chatbox--closed {
+    bottom: -262px;
+}
+
+.chatbox--empty .chatbox__body,
+.chatbox--empty .chatbox__message {
+    display: none;
+}
+
+.chatbox--empty .chatbox__credentials {
+    display: block;
+}
+
