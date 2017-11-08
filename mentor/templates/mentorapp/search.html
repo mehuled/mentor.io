@@ -43,6 +43,7 @@
 
                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" id="custom-search-input" style="margin-top: 24px">
                         <form method="post" action="/mentor/search/">
+                           {% csrf_token %}
                             <input type="text" name="key" class="search-query form-control" placeholder="Search" />
                             <span class="input-group-btn" style="float: right; bottom: 33px;">
                                 <button class="btn btn-danger" type="submit">
@@ -93,7 +94,7 @@
 <div class="container">
  <div class="row" style="display: flex; flex-flow: column nowrap; margin-top: 25px">
    <h2 style="margin: auto">Search for Mentors </h2><hr>
-   
+
         <div class="col-xs-12" style="margin: auto">
                 <div class="card card-inverse card-info">
                     <div class="card-block">
@@ -194,6 +195,7 @@
         </div>
     </div>
     <form class="chatbox__credentials">
+
         <div class="form-group">
             <label for="inputName">Name:</label>
             <input type="text" class="form-control" id="inputName" required>

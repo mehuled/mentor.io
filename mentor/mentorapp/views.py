@@ -89,6 +89,14 @@ def failed_login(request):
     context_list={}
     return render(request,"mentorapp/failed.html",context_list)
 
+def mysession(request):
+    context_list={}
+    return render(request,"mentorapp/mysession.html",context_list)
+
+def apply(request):
+    context_list={}
+    return render(request,"mentorapp/application.html",context_list)
+
 def myauthenticate(username,password):
     context_list=Mentor.objects.all()
     flag=False
@@ -114,43 +122,38 @@ def myauthenticate(username,password):
 
 def home(request):
     context_list={}
-
-    current = None
-    for i in Mentor.objects.all() :
-        if i.isAuthenticated==True :
-            current = i
-            break
-
-    if current is None :
-        for i in Student.objects.all() :
-            if i.isAuthenticated==True :
-                current = i
-                break
-
-    context_list = {'user' : current}
-
     return render(request,"mentorapp/home.html",context_list)
-
-
-def apply(request):
-    context_list={}
-    return render(request,"mentorapp/apply.html",context_list)
 
 def search(request):
     context_list={}
-
-    key = request.POST.get('key')
-
-    mentor_list = Mentor.objects.all()
-
-    li = []
-    for ob in mentor_list :
-        if(ob.tag==key) :
-            li.append(ob)
-
-    context_list = {'results' : li}
-
     return render(request,"mentorapp/search.html",context_list)
+
+def profile(request):
+    context_list={}
+    return render(request,"mentorapp/profile.html",context_list)
+
+
+
+# 
+# def apply(request):
+#     context_list={}
+#     return render(request,"mentorapp/apply.html",context_list)
+
+# def search(request):
+#     context_list={}
+#
+#     key = request.POST.get('key')
+#
+#     mentor_list = Mentor.objects.all()
+#
+#     li = []
+#     for ob in mentor_list :
+#         if(ob.tag==key) :
+#             li.append(ob)
+#
+#     context_list = {'results' : li}
+#
+#     return render(request,"mentorapp/search.html",context_list)
 
 def logout(request) :
     for i in Mentor.objects.all() :
