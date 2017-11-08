@@ -12,5 +12,7 @@ urlpatterns = [
         url(r'^apply/$', views.apply, name='apply'),  #create this one
         url(r'^home/$', views.welcome, name='welcome'),
         url(r'^logout/$', views.logout, name='logout'),
-        url(r'^home/', views.home, name='home'),
+        url(r'^search/$', views.search, name='search'),
+        url(r'^profile/$', views.profile, name='profile'),
+        url(r'^mysession/$', views.mysession, name='mysession'),
 ]
