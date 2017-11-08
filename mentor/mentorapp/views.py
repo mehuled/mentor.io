@@ -134,7 +134,7 @@ def profile(request):
 
 
 
-# 
+#
 # def apply(request):
 #     context_list={}
 #     return render(request,"mentorapp/apply.html",context_list)
@@ -156,12 +156,12 @@ def profile(request):
 #     return render(request,"mentorapp/search.html",context_list)
 
 def logout(request) :
-    for i in Mentor.objects.all() :
-        i.isAuthenticated=False
+    # for i in Mentor.objects.all() :
+    #     i.isAuthenticated=False
+    #
+    # for i  in Student.objects.all() :
+    #     i.isAuthenticated = False
 
-    for i  in Student.objects.all() :
-        i.isAuthenticated = False
+    context_list = {}
 
-    context_dict = {}
-
-    return render(request,"mentorapp/index.html",context_dict)
+    return render(request,"mentorapp/index.html",context_list)
