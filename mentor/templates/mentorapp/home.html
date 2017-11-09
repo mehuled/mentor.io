@@ -56,10 +56,10 @@
 
                         <nav role="navigation" class="okayNav pull-right" id="js-navbar-menu">
                             <ul id="navbar-nav" class="navbar-nav">
-                                <li><a class="btn-nav" href="/mentor/home/">Home</a></li>
-                                <li style="display: flex"><img src="{% static 'images/man.png' %}" class="img-circle img-responsive" alt="Profile Avatar"><a class="btn-nav" href="/mentor/profile">Profile</a></li>
+                                <li><a class="btn-nav" id="home" href="/mentor/home/">Home</a></li>
+                                <li style="display: flex"><img src="{% static 'images/man.png' %}" class="img-circle img-responsive" alt="Profile Avatar"><a class="btn-nav" id="profile" href="/mentor/profile">Profile</a></li>
                                 <li><a class="btn-nav" href="/mentor/home"><i class="fa fa-bell" aria-hidden="true"></i></a></li>
-                                <li><a class="btn-nav btn-border" href="/mentor/logout">Log Out</a></li>
+                                <li><a id="log-out" class="btn-nav btn-border" href="/mentor/logout">Log Out</a></li>
                             </ul>
                         </nav>
 
