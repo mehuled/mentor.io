@@ -219,3 +219,15 @@
 
 } (jQuery) );
 
+document.getElementById("home").onclick = function () {
+    location.href = "/mentor/home";
+};
+
+document.getElementById("profile").onclick = function () {
+    location.href = "/mentor/profile";
+};
+
+document.getElementById("log-out").onclick = function () {
+    location.href = "/mentor";
+};
+
