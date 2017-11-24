@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+{% load staticfiles %} <!-- New line -->
+
+<html lang="en">
+
+    <head>
+        <title>Mentor.io - Platform for Developers and Learners</title>
+
+        <!-- GOOGLE FONTS -->
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+
+        <!-- BOOTSTRAP CSS -->
+        <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}" />
+
+        <!-- Image Slider -->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/plagin-css/plagin.css' %}" />
+
+        <!-- FONT ICONS -->
+        <link rel="stylesheet" type="text/css" href="{% static 'icons/toicons/css/styles.css' %}" />
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+        <!--   COUSTOM CSS link  -->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/responsive.css' %}" />
+    </head>
+
+
+    <body class="">
+        <header class="okayNav-header navbar-fixed-top main-navbar-top" style="background-color: #003648; z-index:2000">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+
+                        <a class="okayNav-header__logo navbar-brand" href="#">
+                            <h2 class="logo-1" style="color: white; font-weight: 300; ">mentor.io</h2>
+                            <h2 class = "logo-2" style="color: black; font-weight: 300; ">mentor.io</h2>
+                        </a>
+
+                    </div> <!-- End: .col-xs-3 -->
+
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" id="custom-search-input" style="margin-top: 24px">
+                        <form method="post" action="/mentor/search/">
+                            <input type="text" name="key" class="search-query form-control" placeholder="Search" />
+                            <span class="input-group-btn" style="float: right; bottom: 33px;">
+                                <button class="btn btn-danger" type="submit">
+                                    <span class=" glyphicon glyphicon-search"></span>
+                                </button>
+                            </span>
+                        </form>
+                         </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+
+                        <nav role="navigation" class="okayNav pull-right" id="js-navbar-menu">
+                            <ul id="navbar-nav" class="navbar-nav">
+                                <li><a class="btn-nav" id="home" href="/mentor/home">Home</a></li>
+                                <li style="display: flex"><img src="{% static 'images/man.png' %}" class="img-circle img-responsive" alt="Profile Avatar"><a class="btn-nav" href="/mentor/profile" id="profile">Profile</a></li>
+                                <li><a class="btn-nav"  href="/mentor/home"><i class="fa fa-bell" aria-hidden="true"></i></a></li>
+                                <li><a class="btn-nav btn-border" id="log-out" href="/mentor">Log Out</a></li>
+                            </ul>
+                        </nav>
+
+                    </div> <!-- End: .col-xs-9 -->
+                </div> <!-- End: .row -->
+            </div> <!-- End: .container -->
+        </header><!-- /header -->
+
+<section class="features-section-1 relative background-light">
+                    <div class="row section-separator">
+    <h2 class="features-heading" style="text-align: center;">Application for mentorship</h2>
+                <div class="container">
+    <div class="row">
+        <section>
+        <div class="wizard">
+            <div class="wizard-inner">
+                <div class="connecting-line"></div>
+                <ul class="nav nav-tabs" role="tablist">
+
+                    <li role="presentation" class="active" style="z-index: 1000">
+                        <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
+                            <span class="round-tab">
+                                <i class="fa fa-user"></i>
+                            </span>
+                        </a>
+                    </li>
+
+                    <li role="presentation" class="disabled" style="z-index: 1000">
+                        <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
+                            <span class="round-tab">
+                                <i class="fa fa-handshake-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li role="presentation" class="disabled" style="z-index: 1000">
+                        <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
+                            <span class="round-tab">
+                                <i class="fa fa-credit-card"></i>
+                            </span>
+                        </a>
+                    </li>
+
+                    <li role="presentation" class="disabled" style="z-index: 1000">
+                        <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-ok"></i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <form role="form">
+                <div class="tab-content">
+                    <div class="tab-pane active" role="tabpanel" id="step1">
+                        <h3>Step 1: Let mentor know about you.</h3>
+                        <p>Fill out the application</p>
+                        <form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">What are your prior experience?</label>
+        <textarea class="form-control" id="experienceinput" aria-describedby="experienceinput" placeholder="Please enter here" minlength="500" rows="5" columns="5"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="expectationsinput">What are your expectations</label>
+        <textarea class="form-control" id="exampleInputPassword1" placeholder="Please enter your expectations here" minlength="500" rows="5" columns="5"></textarea>
+     </div>
+
+                        <ul class="list-inline pull-right">
+                            <li><button type="button" class="btn btn-primary next-step" style="padding: 5px">Save and continue</button></li>
+                        </ul>
+                        </form>
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="step2">
+                        <h3>Step 2: Application review by mentor</h3>
+                        <hr>
+                        <p>Wait for your application to get reviewed. Proceed further once your application is application, otherwise, you can search for another mentor.</p>
+                        <p> Please consider mentor's time if you get rejected. Mentor can handle only few students at a time. Try to chat with the mentor to know the reason for declination.</p>
+                        <ul class="list-inline pull-right">
+                            <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
+                            <li><button type="button" class="btn btn-primary next-step" style="padding: 5px">Proceed for payment</button></li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="step3">
+                        <h3>Payment</h3>
+                        <p>Enter your credit card details</p>
+                        <ul class="list-inline pull-right">
+                            <div class="container">
+  <form class="form-horizontal" role="form">
+    <fieldset>
+      <div class="form-group">
+        <label class="col-sm-3 control-label" for="card-holder-name">Name on Card</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" name="card-holder-name" id="card-holder-name" placeholder="Card Holder's Name">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label" for="card-number">Card Number</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" name="card-number" id="card-number" placeholder="Debit/Credit Card Number">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label" for="expiry-month">Expiration Date</label>
+        <div class="col-sm-9">
+          <div class="row">
+            <div class="col-xs-3">
+              <select class="form-control col-sm-2" name="expiry-month" id="expiry-month">
+                <option>Month</option>
+                <option value="01">Jan (01)</option>
+                <option value="02">Feb (02)</option>
+                <option value="03">Mar (03)</option>
+                <option value="04">Apr (04)</option>
+                <option value="05">May (05)</option>
+                <option value="06">June (06)</option>
+                <option value="07">July (07)</option>
+                <option value="08">Aug (08)</option>
+                <option value="09">Sep (09)</option>
+                <option value="10">Oct (10)</option>
+                <option value="11">Nov (11)</option>
+                <option value="12">Dec (12)</option>
+              </select>
+            </div>
+            <div class="col-xs-3">
+              <select class="form-control" name="expiry-year">
+                <option value="13">2013</option>
+                <option value="14">2014</option>
+                <option value="15">2015</option>
+                <option value="16">2016</option>
+                <option value="17">2017</option>
+                <option value="18">2018</option>
+                <option value="19">2019</option>
+                <option value="20">2020</option>
+                <option value="21">2021</option>
+                <option value="22">2022</option>
+                <option value="23">2023</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label" for="cvv">Card CVV</label>
+        <div class="col-sm-3">
+          <input type="text" class="form-control" name="cvv" id="cvv" placeholder="Security Code">
+        </div>
+      </div>
+      <div class="form-group" style="margin-top: 10px;">
+        <div class="col-sm-offset-3 col-sm-9">
+          <button type="button" class="btn btn-success" style="padding: 5px;">Pay Now</button>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</div>
+<p style="text-align: center;">Your payment is successful.</p>
+ <li style="float: right;><button type="button" class="btn btn-primary btn-info-full next-step">Proceed to the Course</button></li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="step3">
+                        <h3>Step 3</h3>
+                        <p>This is step 3</p>
+                        <ul class="list-inline pull-right">
+                            <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
+                            <li><button type="button" class="btn btn-default next-step">Skip</button></li>
+                            <li><button type="button" class="btn btn-primary btn-info-full next-step">Save and continue</button></li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="complete">
+                        <h3>Welcome to the Artificial intelligence course</h3>
+                        <p>YOu will be mentored by Tawshif Ahsan Khan. Click this <a href="#">link</a> for starting the session.</p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </form>
+        </div>
+    </section>
+   </div>
+</div>
+</section>
+<div class="chatbox chatbox--tray chatbox--empty" style="z-index: 1000">
+    <div class="chatbox__title">
+        <h5><a href="#">Tawshif Ahsan Khan</a></h5>
+        <button class="chatbox__title__tray">
+            <span></span>
+        </button>
+        <button class="chatbox__title__close">
+            <span>
+                <svg viewBox="0 0 12 12" width="12px" height="12px">
+                    <line stroke="#FFFFFF" x1="11.75" y1="0.25" x2="0.25" y2="11.75"></line>
+                    <line stroke="#FFFFFF" x1="11.75" y1="11.75" x2="0.25" y2="0.25"></line>
+                </svg>
+            </span>
+        </button>
+    </div>
+    <div class="chatbox__body">
+        <div class="chatbox__body__message chatbox__body__message--left">
+            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" alt="Picture">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="chatbox__body__message chatbox__body__message--right">
+            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/arashmil/128.jpg" alt="Picture">
+            <p>Nulla vel turpis vulputate, tincidunt lectus sed, porta arcu.</p>
+        </div>
+        <div class="chatbox__body__message chatbox__body__message--left">
+            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" alt="Picture">
+            <p>Curabitur consequat nisl suscipit odio porta, ornare blandit ante maximus.</p>
+        </div>
+        <div class="chatbox__body__message chatbox__body__message--right">
+            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/arashmil/128.jpg" alt="Picture">
+            <p>Cras dui massa, placerat vel sapien sed, fringilla molestie justo.</p>
+        </div>
+        <div class="chatbox__body__message chatbox__body__message--right">
+            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/arashmil/128.jpg" alt="Picture">
+            <p>Praesent a gravida urna. Mauris eleifend, tellus ac fringilla imperdiet, odio dolor sodales libero, vel mattis elit mauris id erat. Phasellus leo nisi, convallis in euismod at, consectetur commodo urna.</p>
+        </div>
+    </div>
+    <form class="chatbox__credentials">
+        <div class="form-group">
+            <label for="inputName">Name:</label>
+            <input type="text" class="form-control" id="inputName" required>
+        </div>
+        <div class="form-group">
+            <label for="inputEmail">Email:</label>
+            <input type="email" class="form-control" id="inputEmail" required>
+        </div>
+        <button type="submit" class="btn btn-success btn-block">Enter Chat</button>
+    </form>
+    <textarea class="chatbox__message" placeholder="Write something interesting"></textarea>
+</div>
+    </body>
+
+
+
+<!--         <h1>Mentor.io</h1>
+
+        <hr> </hr>
+
+        <a href="/mentor/register_student/">Register as a Student!</a><br />
+        <br>
+        <a href="/mentor/register_mentor/">Register as a Mentor!</a><br /><br>
+        <a href="/mentor/about/">About</a><br />
+
+        <a href="{% static 'docs/overview.pdf' %}">View Project Overview</a><br/>
+ -->
+
+         <!-- SCRIPTS
+        ========================================-->
+        <script src="{% static 'js/plagin-js/jquery-1.11.3.js' %}"></script>
+        <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/plagin-js/plagin.js' %}"></script>
+
+        <!-- Custom Script
+        ==========================================-->
+        <script src="{% static 'js/custom-scripts.js' %}"></script>
+        <script src="{% static 'js/chatbox.js' %}"></script>
+        <script src="{% static 'js/project.js' %}"></script>
+
+    </body>
+
+</html>

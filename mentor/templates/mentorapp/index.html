@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+
+{% load staticfiles %} <!-- New line -->
+
+<html lang="en">
+
+    <head>
+        <title>Mentor.io - Platform for Developers and Learners</title>
+
+        <!-- GOOGLE FONTS -->
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+
+        <!-- BOOTSTRAP CSS -->
+        <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}" />
+
+        <!-- Image Slider -->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/plagin-css/plagin.css' %}" />
+
+        <!-- FONT ICONS -->
+        <link rel="stylesheet" type="text/css" href="{% static 'icons/toicons/css/styles.css' %}" />
+
+        <!--   COUSTOM CSS link  -->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/responsive.css' %}" />
+    </head>
+
+    <body class="">
+        <header id="header" class="okayNav-header navbar-fixed-top main-navbar-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+
+                        <a class="okayNav-header__logo navbar-brand" href="#">
+                            <h2 class="logo-1" style="color: white; font-weight: 300; ">mentor.io</h2>
+                            <h2 class = "logo-2" style="color: black; font-weight: 300; ">mentor.io</h2>
+                        </a>
+
+                    </div> <!-- End: .col-xs-3 -->
+                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-6">
+
+                        <nav role="navigation" class="okayNav pull-right" id="js-navbar-menu">
+                            <ul id="navbar-nav" class="navbar-nav">
+                                <li><a class="btn-nav" href="#home">Home</a></li>
+                                <li><a class="btn-nav" href="#about">Our community</a></li>
+                                <li><a class="btn-nav" href="#about">Look for Mentors</a></li>
+                                <li><a class="btn-nav" href="#" data-toggle="modal" data-target="#sign-in-form">Sign In</a></li>
+                                <li><a class="btn-nav btn-border" href="#" data-toggle="modal" data-target="#sign-up-form">Sign Up</a></li>
+                            </ul>
+                        </nav>
+
+                    </div> <!-- End: .col-xs-9 -->
+                </div> <!-- End: .row -->
+            </div> <!-- End: .container -->
+        </header><!-- /header -->
+
+
+                <!-- Start: Sign In Form
+        ================================== -->
+        <div id="sign-in-form" class="sign-form modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+
+                    <!-- Modal Close Button -->
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+                    <form method="post" class="single-form" action="/mentor/home/">
+			  {% csrf_token %}
+                        <div class="col-xs-12 text-center">
+                            <h2 class="section-heading p-b-30">Sign In</h2>
+                        </div>
+
+                        <div class="col-xs-12">
+                            <!-- Email -->
+                            <input name="user" class="contact-email form-control" type="text" placeholder="username" required="">
+                        </div>
+                        <div class="col-xs-12">
+                            <!-- Subject -->
+                            <input name="pass" class="contact-password form-control" type="password" placeholder="Password" required>
+                        </div>
+
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <input type="checkbox" id="remember-me">
+                                <label for="remember-me">Remember me</label>
+                            </div>
+                        </div>
+
+                        <!-- Subject Button -->
+                        <div class="btn-form text-center col-xs-12">
+                            <button class="btn btn-fill">Sign In</button>
+                        </div>
+                    </form>
+
+                </div><!-- End: .modal-content -->
+            </div><!-- End: .modal-dialog -->
+        </div><!-- End: .modal -->
+        <!-- End: Sign In Form
+        ================================== -->
+
+
+
+
+        <!-- Start: Sign Up Form
+        ================================== -->
+        <div id="sign-up-form" class="sign-form modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content p-t-30 p-b-30">
+
+                    <!-- Modal Close Button -->
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+
+                    <div class="col-xs-12 text-center">
+                        <h2 class="section-heading p-b-30">Sign Up</h2>
+                    </div>
+
+                    <div class="col-xs-12" style="margin-bottom: 15px">
+                        <ul class="nav nav-tabs">
+                            <li class="active" style="text-align: center;"><a data-toggle="pill" href="#mentor">As a Mentor</a></li>
+                            <li style="text-align: center;"><a data-toggle="pill"  href="#student">As a Student</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-content">
+                        <div id="mentor" class="tab-pane fade in active">
+                            <form class="single-form" id="mentor_form" method="post" action="/mentor/register_mentor/">
+                            {% csrf_token %}
+                                <div class="col-xs-12">
+                                    <!-- First Name -->
+                                    <input name="firstname" maxlength="128" class="contact-first-name form-control" type="text"  placeholder="First Name*" required="">
+                                </div>
+                                <div class="col-xs-12">
+                                    <!-- Last Name -->
+                                    <input name="lastname" maxlength="128" class="contact-last-name form-control" type="text" placeholder="Last Name*" required="">
+                                </div>
+                                <div class="col-xs-12">
+                                    <!-- Last Name -->
+                                    <input name="username" maxlength="50" class="contact-last-name form-control" type="text" placeholder="User Name*" required="">
+                                </div>
+                                <div class="col-xs-12">
+                                    <!-- Subject -->
+                                    <input name="password" class="contact-password form-control" type="password" placeholder="Password">
+                                </div>
+                                <div class="col-xs-12">
+                                    <!-- Subject -->
+                                    <input name="confirmPassword" class="contact-cmp-password form-control" type="password" placeholder="Confirm Password">
+                                </div>
+                                <div class="col-xs-12">
+                                    <!-- Email -->
+                                    <input name="email" maxlength="254" class="contact-email form-control" type="email" placeholder="Email*" required="">
+                                </div>
+                                <div class="col-xs-12">
+                                    <!-- Email -->
+                                    <input name="github" maxlength="128" class="contact-github form-control" type="text" placeholder="Github*" required="">
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="checkbox">
+                                        <input type="checkbox" id="agreement">
+                                        <label for="agreement">I agree to Your Terms of Service </label>
+                                    </div>
+                                </div>
+
+                                <!-- Subject Button -->
+                                <div class="btn-form text-center col-xs-12">
+                                    <button class="btn btn-fill">Sign Up</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div id="student" class="tab-pane fade in">
+                            <form class="single-form" id="mentor_form" method="post" action="/mentor/register_student/">
+                            {% csrf_token %}
+                                <div class="col-xs-12">
+                                    <!-- First Name -->
+                                    <input name="firstname" maxlength="128" class="contact-first-name form-control" type="text"  placeholder="First Name*" required="">
+                                </div>
+                                <div class="col-xs-12">
+                                    <!-- Last Name -->
+                                    <input name="lastname" maxlength="128" class="contact-last-name form-control" type="text" placeholder="Last Name*" required="">
+                                </div>
+                                <div class="col-xs-12">
+                                    <!-- Last Name -->
+                                    <input name="username" maxlength="50" class="contact-last-name form-control" type="text" placeholder="User Name*" required="">
+                                </div>
+                                <div class="col-xs-12">
+                                    <!-- Subject -->
+                                    <input name="password" class="contact-password form-control" type="password" placeholder="Password">
+                                </div>
+                                <div class="col-xs-12">
+                                    <!-- Subject -->
+                                    <input name="confirmPassword" class="contact-cmp-password form-control" type="password" placeholder="Confirm Password">
+                                </div>
+                                <div class="col-xs-12">
+                                    <!-- Email -->
+                                    <input name="email" maxlength="254" class="contact-email form-control" type="email" placeholder="Email*" required="">
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="checkbox">
+                                        <input type="checkbox" id="agreement">
+                                        <label for="agreement">I agree to Your Terms of Service </label>
+                                    </div>
+                                </div>
+
+                                <!-- Subject Button -->
+                                <div class="btn-form text-center col-xs-12">
+                                    <button class="btn btn-fill">Sign Up</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div><!-- End: .modal-content -->
+            </div><!-- End: .modal-dialog -->
+        </div><!-- End: .modal -->
+        <!-- End: Sign Out Form
+        ================================== -->
+
+                <!-- Start: Header Section
+        ================================ -->
+        <section class="header-section-1 bg-image-1 header-js" id="header" >
+            <div class="overlay-color">
+                <div class="container">
+                    <div class="row section-separator">
+
+                        <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+                            <div class="part-inner text-center">
+
+                                <!--  Header SubTitle Goes here -->
+                                <h1 class="title">Live 1:1 mentorship from expert developers.</h1>
+
+                                <div class="detail">
+                                    <p>Mentors.io​ ​is​ ​a​ platform​ ​for​ ​developers​ ​and​ ​learners​ everywhere.</p>
+                                </div>
+
+                                <!-- Button Area -->
+                                <div class="btn-form btn-scroll">
+                                    <a href="#" class="btn btn-border">Get started</a>
+                                </div>
+
+                            </div>
+                        </div> <!-- End: .part-1 -->
+
+                    </div> <!-- End: .row -->
+                </div> <!-- End: .container -->
+            </div> <!-- End: .overlay-color -->
+        </section>
+        <!-- End: Header Section
+        ================================ -->
+
+
+        <!-- Start: Features Section 1
+        ====================================== -->
+        <section class="features-section-1 relative background-semi-dark" >
+            <div class="container">
+                <div class="row section-separator">
+
+                    <div class="each-features col-sm-6">
+                        <div class="inner text-center bg-cover light-text" style="background-image: url(images/background-2.jpg);">
+                            <div class="overlay-color">
+
+                                <div class="group">
+                                    <h4 class="title">ABOUT MENTOR.IO</h4>
+                                    <div class="detail">
+                                        <p>Mentors.io​ ​is​ ​a ​platform​ ​to​ ​bring​ ​together​ ​those​ who​ ​wish​ ​to​ ​help​ ​& ​those​ ​who​ ​need​ ​to​ ​help in​​ technical​ domain​ ​so​ ​that​ ​everyone​ ​can​ ​learn​ ​and​ ​excel​ ​while​ helping​ ​others.</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="each-features col-sm-6">
+                        <div class="inner text-center bg-cover light-text" style="background-image: url(images/background-3.jpg);">
+                            <div class="overlay-color">
+
+                                <div class="group">
+                                    <h4 class="title">OUR MISSION</h4>
+                                    <div class="detail">
+                                        <p>We​ ​wish​ ​to​ ​develop​ ​a ​community​ ​or​ the​ first​ place​ to​ go​ to​ get​ help​ or​ mentorship​ ​to​ achieve excellence​ in​ their​ fields​ of​ interest and speeds up your development process. </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div> <!-- End: .row -->
+            </div> <!-- End: .container -->
+        </section>
+        <!-- End: Features Section 1
+        ======================================-->
+
+        <!-- Start: Features Section 2
+        ====================================== -->
+        <section class="features-section-2 relative background-light">
+            <div class="container">
+                <div class="row section-separator">
+
+                    <!-- Start: Section Header -->
+                    <div class="section-header col-sm-8 col-sm-offset-2">
+
+                        <p class="sub-heading">How It Works</p>
+                        <h2 class="section-heading">How mentors can help you</h2>
+
+                    </div>
+                    <!-- End: Section Header -->
+
+                    <div class="clearfix"></div>
+
+                    <div class="col-xs-12 features-item three-col">
+                        <div class="row">
+
+                            <div class="each-features col-md-4 col-sm-6 col-xs-12">
+                                <div class="inner">
+
+                                    <div class="sub-title-overlay counter"></div>
+                                    <h4 class="title">Problem Solving</h4>
+                                    <div class="detail">
+                                        <p>Get answers to complex problems from experts that you can't find answers for on sites like Stack Overflow.</p>
+                                    </div>
+
+                                </div> <!-- End: .inner -->
+                            </div> <!-- End: .each-features -->
+
+                            <div class="each-features col-md-4 col-sm-6 col-xs-12">
+                                <div class="inner">
+
+                                    <div class="sub-title-overlay counter"></div>
+                                    <h4 class="title">Learn Efficiently</h4>
+                                    <div class="detail">
+                                        <p>Still not "getting" it? Personalize your learning experience with the right mentor.</p>
+                                    </div>
+
+                                </div> <!-- End: .inner -->
+                            </div> <!-- End: .each-features -->
+
+                            <div class="each-features col-md-4 col-sm-6 col-xs-12">
+                                <div class="inner">
+
+                                    <div class="sub-title-overlay counter"></div>
+                                    <h4 class="title">Improve Your Skills</h4>
+                                    <div class="detail">
+                                        <p>Share your code and see what went wrong. Learn from an expert and become a better developer.</p>
+                                    </div>
+
+                                </div> <!-- End: .inner -->
+                            </div> <!-- End: .each-features -->
+
+
+
+                        </div> <!-- End: .row -->
+                    </div> <!-- End: .features-item -->
+
+                </div> <!-- End: .row -->
+            </div> <!-- End: .container -->
+        </section>
+        <!-- End: Features Section 2
+        ======================================-->
+
+        <!-- Start: Features Section 12
+        ================================== -->
+        <section class="features-section-12 relative background-semi-dark">
+            <div class="container">
+                <div class="row section-separator ">
+
+                    <!-- Start: Section Header -->
+                    <div class="section-header">
+
+                        <p class="sub-heading">Mentors.io Team</p>
+                        <h2 class="section-heading">Our Team Members</h2>
+
+                    </div>
+                    <!-- End: Section Header -->
+
+                    <div class="clearfix"></div>
+
+                    <div class="features-item our-team col-xs-12">
+                        <div class="row">
+
+                            <div class="each-features col-md-4 col-sm-6 col-xs-12">
+                                <div class="inner background-light text-center">
+                                    <div class="features-hover">
+                                        <img src="{% static 'images/parth.jpg' %}" alt="Our Members" class="img-responsive">
+                                        <div class="mask">
+                                            <div class="mask-inner">
+                                                <p class="pera-text">Parth Goyal, the guy behind your seamlesss experience at mentor.io </p>
+                                                <div class="title">Get Connected</div>
+                                                <ul class="nav social-icon">
+                                                    <li><a href="#"><i class="icon icons8-facebook"></i></a></li>
+                                                    <li><a href="#"><i class="icon icons8-twitter"></i></a></li>
+                                                    <li><a href="#"><i class="icon icons8-pinterest"></i></a></li>
+                                                    <li><a href="#"><i class="icon icons8-instagram"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="detail">
+                                        <h6 class="name">Parth Goyal</h6>
+                                        <p class="position">CTO, Mentor.io  </p>
+                                    </div>
+
+                                </div> <!-- End: .inner -->
+                            </div> <!-- End: .each-features -->
+
+                            <div class="each-features col-md-4 col-sm-6 col-xs-12">
+                                <div class="inner background-light text-center">
+                                    <div class="features-hover">
+                                        <img src="{% static 'images/divyank.jpg' %}" alt="Our Members" class="img-responsive">
+                                        <div class="mask">
+                                            <div class="mask-inner">
+                                                <p class="pera-text">Divyank Srivastava is a supercool guy and he makes this webite look so cool.</p>
+                                                <div class="title">Get Connected</div>
+                                                <ul class="nav social-icon">
+                                                    <li><a href="#"><i class="icon icons8-facebook"></i></a></li>
+                                                    <li><a href="#"><i class="icon icons8-twitter"></i></a></li>
+                                                    <li><a href="#"><i class="icon icons8-pinterest"></i></a></li>
+                                                    <li><a href="#"><i class="icon icons8-instagram"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="detail">
+                                        <h6 class="name">Divyank​ Srivastava</h6>
+                                        <p class="position">CAO, Mentor.io </p>
+                                    </div>
+
+                                </div> <!-- End: .inner -->
+                            </div> <!-- End: .each-features -->
+
+                            <div class="each-features col-md-4 col-sm-6 col-xs-12">
+                                <div class="inner background-light text-center">
+                                    <div class="features-hover">
+                                        <img src="{% static 'images/marut.jpg' %}" alt="Our Members" class="img-responsive">
+                                        <div class="mask">
+                                            <div class="mask-inner">
+                                                <p class="pera-text">Marut Lahoty, a developer at mentor.io.</p>
+                                                <div class="title">Get Connected</div>
+                                                <ul class="nav social-icon">
+                                                    <li><a href="#"><i class="icon icons8-facebook"></i></a></li>
+                                                    <li><a href="#"><i class="icon icons8-twitter"></i></a></li>
+                                                    <li><a href="#"><i class="icon icons8-pinterest"></i></a></li>
+                                                    <li><a href="#"><i class="icon icons8-instagram"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="detail">
+                                        <h6 class="name">Marut Lahoty</h6>
+                                        <p class="position">CVO, Mentor.io </p>
+                                    </div>
+
+                                </div> <!-- End: .inner -->
+                            </div> <!-- End: .each-features -->
+
+                        </div>
+                    </div> <!-- End: .col-md-8 -->
+
+                </div> <!-- End: .row -->
+            </div> <!-- End: .container -->
+        </section>
+        <!-- End: Features Section 12
+        ================================== -->
+
+        <!-- Start: Footer Section 1
+        ================================== -->
+        <footer class="footer-section background-dark">
+            <div class="container">
+                <div class="row">
+
+                    <div class="footer-header">
+                        <div class="section-separator">
+
+                            <div class="each-section col-sm-3 col-xs-12">
+
+                                <p class="title"><strong>Expert Help </strong></p>
+                                <ul class="nav link-list">
+                                    <li><a href="#">Web Programming</a></li>
+                                    <li><a href="#">Data Science</a></li>
+                                    <li><a href="#">Cloud Computing</a></li>
+                                    <li><a href="#">View All</a></li>
+                                </ul>
+
+                            </div> <!-- End: .each-section -->
+                            <div class="each-section col-sm-3 col-xs-12">
+
+                                <p class="title"><strong> INFO</strong></p>
+                                <ul class="nav link-list">
+                                    <li><a href="#">Become a Mentor</a></li>
+                                    <li><a href="#">Jobs</a></li>
+                                    <li><a href="#">Support</a></li>
+                                    <li><a href="#">Success Stories</a></li>
+                                </ul>
+
+                            </div> <!-- End: .each-section -->
+                            <div class="each-section col-sm-3 col-xs-12">
+
+                                <p class="title"><strong>Contact us</strong></p>
+                                <ul class="nav link-list">
+                                    <li>BH2, The LNMIIT</li>
+                                    <li><a href="callto:18562361853">Call us +91-8769925664</a></li>
+                                    <li><a href="mailto:Contact@archer.com">Contact@mentor.io</a></li>
+                                    <li><a href="#">Locate on Google Map</a></li>
+                                </ul>
+
+                            </div> <!-- End: .each-section -->
+                            <div class="each-section vertical-bottom col-sm-3 col-xs-12">
+
+                                <ul class="nav">
+                                    <li>
+                                        <div class="li-inner">
+                                            <ul class="nav social-icon">
+                                                <li><a href="#"><i class="icon icons8-facebook"></i></a></li>
+                                                <li><a href="#"><i class="icon icons8-twitter"></i></a></li>
+                                                <li><a href="#"><i class="icon icons8-pinterest"></i></a></li>
+                                                <li><a href="#"><i class="icon icons8-instagram"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                            </div> <!-- End: .each-section -->
+
+                        </div>
+                    </div> <!-- End: .footer-header -->
+
+                    <div class="copyright text-center col-xs-12">
+                        <p>Copyright: Mentor.io 2017, All rights reserved.</p>
+                    </div> <!-- End: .copyright -->
+
+                </div><!-- End: .section-separator  -->
+            </div> <!-- End: .container  -->
+        </footer>
+        <!-- End: Footer Section 1
+        ================================== -->
+
+
+
+<!--         <h1>Mentor.io</h1>
+
+        <hr> </hr>
+
+        <a href="/mentor/register_student/">Register as a Student!</a><br />
+        <br>
+        <a href="/mentor/register_mentor/">Register as a Mentor!</a><br /><br>
+        <a href="/mentor/about/">About</a><br />
+
+        <a href="{% static 'docs/overview.pdf' %}">View Project Overview</a><br/>
+ -->
+
+         <!-- SCRIPTS
+        ========================================-->
+        <script src="{% static 'js/plagin-js/jquery-1.11.3.js' %}"></script>
+        <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/plagin-js/plagin.js' %}"></script>
+
+        <!-- Custom Script
+        ==========================================-->
+        <script src="{% static 'js/custom-scripts.js' %}"></script>
+
+    </body>
+
+</html>

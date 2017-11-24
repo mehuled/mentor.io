@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+{% load staticfiles %} <!-- New line -->
+
+<html lang="en">
+
+    <head>
+        <title>Mentor.io - Platform for Developers and Learners</title>
+
+        <!-- GOOGLE FONTS -->
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+
+        <!-- BOOTSTRAP CSS -->
+        <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}" />
+
+        <!-- Image Slider -->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/plagin-css/plagin.css' %}" />
+
+        <!-- FONT ICONS -->
+        <link rel="stylesheet" type="text/css" href="{% static 'icons/toicons/css/styles.css' %}" />
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+        <!--   COUSTOM CSS link  -->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/responsive.css' %}" />
+        <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+        <link href="{% static 'css/default.css' %}" rel="stylesheet" type="text/css" media="all" />
+        <link href="{% static 'css/fonts.css' %}" rel="stylesheet" type="text/css" media="all" />
+    </head>
+
+
+    <body class="">
+        <header class="okayNav-header navbar-fixed-top main-navbar-top" style="background-color: #003648">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+
+                        <a class="okayNav-header__logo navbar-brand" href="#">
+                            <h2 class="logo-1" style="color: white; font-weight: 300; ">mentor.io</h2>
+                            <h2 class = "logo-2" style="color: black; font-weight: 300; ">mentor.io</h2>
+                        </a>
+
+                    </div> <!-- End: .col-xs-3 -->
+
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" id="custom-search-input" style="margin-top: 24px">
+                        <form method="post" action="/mentor/search/">
+                            <input type="text" name="key" class="search-query form-control" placeholder="Search" />
+                            <span class="input-group-btn" style="float: right; bottom: 33px;">
+                                <button class="btn btn-danger" type="submit">
+                                    <span class=" glyphicon glyphicon-search"></span>
+                                </button>
+                            </span>
+                        </form>
+                         </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+
+                        <nav role="navigation" class="okayNav pull-right" id="js-navbar-menu">
+                            <ul id="navbar-nav" class="navbar-nav">
+                                <li><a class="btn-nav" href="/mentor/home">Home</a></li>
+                                <li style="display: flex"><img src="{% static 'images/man.png' %}" class="img-circle img-responsive" alt="Profile Avatar"><a class="btn-nav" href="/mentor/profile">Profile</a></li>
+                                <li><a class="btn-nav" href="/mentor/home"><i class="fa fa-bell" aria-hidden="true" style="background-color: transparent;"></i></a></li>
+                                <li><a class="btn-nav btn-border" href="/mentor">Log Out</a></li>
+                            </ul>
+                        </nav>
+
+                    </div> <!-- End: .col-xs-9 -->
+                </div> <!-- End: .row -->
+            </div> <!-- End: .container -->
+        </header><!-- /header -->
+        <section class="features-section-1 relative background-light">
+                    <div class="row section-separator"  style="padding-bottom: 0px">
+        <div id="page" class="container">
+    <div id="header" class="col-xs-3">
+        <div id="logo">
+            <img src="{% static 'images/pic04.jpg' %}" alt="" />
+            <h2><a href="#">Web Development</a></h2>
+            <span>By <a href="http://templated.co" rel="nofollow">Tawshif Ahsan Khan</a></span>
+        </div>
+        <div id="menu">
+            <ul>
+                <li class="current_page_item"><a href="#" accesskey="1" title="">Course Overview</a></li>
+                <li><a href="#" accesskey="2" title="">Week 1</a></li>
+                <li><a href="#" accesskey="3" title="">Week 2</a></li>
+                <li><a href="#" accesskey="4" title="">Week 3</a></li>
+                <li><a href="#" accesskey="4" title="">Week 4</a></li>
+                <li><a href="#" accesskey="5" title="">Capstone Project</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="main" class="col-xs-9">
+        <div id="banner">
+            <img src="{% static 'images/pic03.jpg' %}" alt="" class="image-full" />
+        </div>
+        <div id="welcome">
+            <div class="title">
+                <h2>Introduction to Web Development</h2>
+                <span class="byline">Created By - Tawshif Ahsan Khan</span>
+                <div style="display: flex;">
+                <div class="rating" style="margin: auto;">
+    <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+    <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+    <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+    <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+    <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+    <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+    <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+    <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+    <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+    <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+</div>
+</div>
+<div style="display: flex;">
+                <div class="rating" style="margin: auto;">
+    <a href="#" class="button" style="color: #272925;"
+    data-toggle="modal" data-target="#sign-up-form">Review the mentor?</a>
+</div>
+</div>
+            </div>
+            </div>
+            <div>
+            <div>
+            <p>This course is designed to start you on a path toward future studies in web development and design, no matter how little experience or technical knowledge you currently have. The web is a very big place, and if you are the typical internet user, you probably visit several websites every day, whether for business, entertainment or education. But have you ever wondered how these websites actually work? How are they built? How do browsers, computers, and mobile devices interact with the web? What skills are necessary to build a website? With almost 1 billion websites now on the internet, the answers to these questions could be your first step toward a better understanding of the internet and developing a new set of internet skills. By the end of this course you’ll be able to describe the structure and functionality of the world wide web, create dynamic web pages using a combination of HTML, CSS, and JavaScript, apply essential programming language concepts when creating HTML forms, select an appropriate web hosting service, and publish your webpages for the world to see. Finally, you’ll be able to develop a working model for creating your own personal or business websites in the future and be fully prepared to take the next step in a more advanced web development or design course or specialization.</p>
+            </div>
+            <ul class="actions">
+                <li><a href="#" class="button">Continue from Week 1>>></a></li>
+            </ul>
+        </div>
+        <div id="featured">
+            <ul class="style1">
+                <li class="first">
+                    <p class="date"><a href="#">Week<b>1</b></a></p>
+                    <h3>Course Overview and Website Structure and Hosting</h3>
+                    <p><a href="#">This first module provides an overview of how websites function, their structure, and the ins and outs of choosing a website name and selecting an online host to house your website. By the end of this module, you'll be able to: find and select a web hosting company; choose an effective domain name; use the host to manage your websites; and discuss how networks and the internet function at a high level.</a></p>
+                </li>
+                <li>
+                    <p class="date"><a href="#">Week<b>2</b></a></p>
+                    <h3>Designing Your Own Website: HTML Basics</h3>
+                    <p><a href="#">In this module, we'll begin to explore how to design and create websites by exploring the base language used to power all websites: HTML. By the end of this lesson, you'll be able to: identify and use common HTML tags; add an image to a webpage; create HTML-formatted tables; use hyperlinks to connect a series of webpages; upload your finished HTML pages to a web host; and, learn some tips and tricks for styling pages and practicing your coding.</a></p>
+                </li>
+                <li>
+                    <p class="date"><a href="#">Week<b>3</b></a></p>
+                    <h3>Introduction to Programming Using JavaScript</h3>
+                    <p><a href="#">Now that you know some basic HTML, it's time to turn our attention to another common scripting language used to make websites dynamic - that is allowing users to interact with your webpages - JavaScript. While learning about JavaScript, you'll also gain some foundational knowledge common to all programming languages. By the end of this module, you'll be able to: discuss what is meant by dynamic content; perform essential programming language tasks; create simple JavaScript programs; use JavaScript to set up alerts and respond to events, to read input, and to change HTML; and conduct basic JavaScript testing.</a></p>
+                </li>
+                <li>
+                    <p class="date"><a href="#">Week<b>4</b></a></p>
+                    <h3>Websites with Style: CSS Properties, Colors and Fonts</h3>
+                    <p><a href="#">While HTML and JavaScript are very useful for web development, they don't exactly make websites look attractive - that's where cascading style sheets, or CSS, comes into play. While HTML is used to build the structure of our pages and JavaScript is used to provide interactive functionality, CSS is used to graphically design and layout webpages. By the end of this module, you'll be able to: discuss common mistakes in designing a website; identify and apply CSS basics like purpose and syntax; use CSS properties to control fonts, colors, layouts, and other common properties; differentiate between in-line, internal, and external CSS; and practice and test your cascading style sheets.</a></p>
+                </li>
+                <li>
+                    <p class="date"><a href="#">Week<b>5</b></a></p>
+                    <h3>Creating HTML Forms</h3>
+                    <p><a href="#">In this lesson, we're going to learn to apply all of the skills we've acquired so far to make a very common, and very useful type of webpage - an HTML form. HTML forms are seen everywhere on the internet and are used to capture particular information from users in a variety of ways. By the end of this module you'll be able to: create basic HTML forms; identify and appropriately use different types of HTML input; validate user input; submit HTML forms; and test how your forms are working and troubleshoot errors.</a></p>
+                </li>
+                <li>
+                    <p class="date"><a href="#">Week<b>6</b></a></p>
+                    <h3>Creating Web Applications</h3>
+                    <p><a href="#">In our final module, we're going to explore the basics of designing web applications - programming useful and dynamic webpages that allow our users to interact with them. By the end of this lesson you'll be able to: distinguish between client and server-side development; apply advanced JavaScript programming skills to create logic with selection and iteration; create new features for applications; create more advanced HTML forms; and practice and learn additional troubleshooting and problem-solving techniques. The module wraps with a final peer review activity that will draw upon all of the skills you've learned in this course.</a></p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+</section>
+        <div class="chatbox chatbox--tray chatbox--empty" style="z-index: 1000">
+    <div class="chatbox__title">
+        <h5><a href="#">Tawshif Ahsan Khan</a></h5>
+        <button class="chatbox__title__tray">
+            <span></span>
+        </button>
+        <button class="chatbox__title__close">
+            <span>
+                <svg viewBox="0 0 12 12" width="12px" height="12px">
+                    <line stroke="#FFFFFF" x1="11.75" y1="0.25" x2="0.25" y2="11.75"></line>
+                    <line stroke="#FFFFFF" x1="11.75" y1="11.75" x2="0.25" y2="0.25"></line>
+                </svg>
+            </span>
+        </button>
+    </div>
+    <div class="chatbox__body">
+        <div class="chatbox__body__message chatbox__body__message--left">
+            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" alt="Picture">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="chatbox__body__message chatbox__body__message--right">
+            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/arashmil/128.jpg" alt="Picture">
+            <p>Nulla vel turpis vulputate, tincidunt lectus sed, porta arcu.</p>
+        </div>
+        <div class="chatbox__body__message chatbox__body__message--left">
+            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" alt="Picture">
+            <p>Curabitur consequat nisl suscipit odio porta, ornare blandit ante maximus.</p>
+        </div>
+        <div class="chatbox__body__message chatbox__body__message--right">
+            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/arashmil/128.jpg" alt="Picture">
+            <p>Cras dui massa, placerat vel sapien sed, fringilla molestie justo.</p>
+        </div>
+        <div class="chatbox__body__message chatbox__body__message--right">
+            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/arashmil/128.jpg" alt="Picture">
+            <p>Praesent a gravida urna. Mauris eleifend, tellus ac fringilla imperdiet, odio dolor sodales libero, vel mattis elit mauris id erat. Phasellus leo nisi, convallis in euismod at, consectetur commodo urna.</p>
+        </div>
+    </div>
+    <form class="chatbox__credentials">
+        <div class="form-group">
+            <label for="inputName">Name:</label>
+            <input type="text" class="form-control" id="inputName" required>
+        </div>
+        <div class="form-group">
+            <label for="inputEmail">Email:</label>
+            <input type="email" class="form-control" id="inputEmail" required>
+        </div>
+        <button type="submit" class="btn btn-success btn-block">Enter Chat</button>
+    </form>
+    <textarea class="chatbox__message" placeholder="Write something interesting"></textarea>
+</div>
+        <div id="sign-up-form" style="z-index: 100000" class="sign-form modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content p-t-30 p-b-30">
+
+                    <!-- Modal Close Button -->
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+
+                    <div class="col-xs-12 text-center">
+                        <h2 class="section-heading p-b-30">Review your mentor</h2>
+                    </div>
+
+                            <form class="single-form" id="mentor_form">
+                                <div class="col-xs-12" style="margin-bottom: 12px;">
+                                    <!-- First Name -->
+                                    <div style="display: flex;">
+                                    <label class="col-lg-3 control-label">Stars</label>
+                <div class="rating">
+    <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+    <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+    <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+    <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+    <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+    <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+    <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+    <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+    <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+    <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+</div>
+</div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <!-- Last Name -->
+                                    <label class="col-lg-3 control-label">Comments</label>
+                                <div class="col-lg-8">
+                                    <textarea class="form-control" value="" rows="20" cols="20"></textarea>
+                                </div>
+                                </div>
+
+                                <!-- Subject Button -->
+                                <div class="btn-form text-center col-xs-12">
+                                    <button class="btn btn-fill">Submit</button>
+                                </div>
+                            </form>
+
+                </div><!-- End: .modal-content -->
+            </div><!-- End: .modal-dialog -->
+        </div><!-- End: .modal -->
+    </body>
+
+
+
+<!--         <h1>Mentor.io</h1>
+
+        <hr> </hr>
+
+        <a href="/mentor/register_student/">Register as a Student!</a><br />
+        <br>
+        <a href="/mentor/register_mentor/">Register as a Mentor!</a><br /><br>
+        <a href="/mentor/about/">About</a><br />
+
+        <a href="{% static 'docs/overview.pdf' %}">View Project Overview</a><br/>
+ -->
+
+         <!-- SCRIPTS
+        ========================================-->
+        <script src="{% static 'js/plagin-js/jquery-1.11.3.js' %}"></script>
+        <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/plagin-js/plagin.js' %}"></script>
+
+        <!-- Custom Script
+        ==========================================-->
+        <script src="{% static 'js/custom-scripts.js' %}"></script>
+        <script src="{% static 'js/chatbox.js' %}"></script>
+
+    </body>
+
+</html>

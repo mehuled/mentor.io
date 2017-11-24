@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+{% load staticfiles %} <!-- New line -->
+
+<html lang="en">
+
+    <head>
+        <title>Mentor.io - Platform for Developers and Learners</title>
+
+        <!-- GOOGLE FONTS -->
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+
+        <!-- BOOTSTRAP CSS -->
+        <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}" />
+
+        <!-- Image Slider -->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/plagin-css/plagin.css' %}" />
+
+        <!-- FONT ICONS -->
+        <link rel="stylesheet" type="text/css" href="{% static 'icons/toicons/css/styles.css' %}" />
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+        <!--   COUSTOM CSS link  -->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/responsive.css' %}" />
+    </head>
+
+
+    <body class="">
+        <header class="okayNav-header navbar-fixed-top main-navbar-top" style="background-color: #003648">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+
+                        <a class="okayNav-header__logo navbar-brand" href="/mentor/home">
+                            <h2 class="logo-1" style="color: white; font-weight: 300; ">mentor.io</h2>
+                            <h2 class = "logo-2" style="color: black; font-weight: 300; ">mentor.io</h2>
+                        </a>
+
+                    </div> <!-- End: .col-xs-3 -->
+
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" id="custom-search-input" style="margin-top: 24px">
+                        <form method="post" action="/mentor/search/">
+                            <input type="text" name="key" class="search-query form-control" placeholder="Search" />
+                            <span class="input-group-btn" style="float: right; bottom: 33px;">
+                                <button class="btn btn-danger" type="submit">
+                                    <span class=" glyphicon glyphicon-search"></span>
+                                </button>
+                            </span>
+                        </form>
+                         </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+
+                        <nav role="navigation" class="okayNav pull-right" id="js-navbar-menu">
+                            <ul id="navbar-nav" class="navbar-nav">
+                                <li><a class="btn-nav" id="home" href="/mentor/home">Home</a></li>
+                                <li style="display: flex"><img src="{% static 'images/man.png' %}" class="img-circle img-responsive" alt="Profile Avatar"><a class="btn-nav" id="profile" href="/mentor/profile">Profile</a></li>
+                                <li><a class="btn-nav"  href="/mentor/home"><i class="fa fa-bell" aria-hidden="true"></i></a></li>
+                                <li><a class="btn-nav btn-border" id="log-out" href="/mentor">Log Out</a></li>
+                            </ul>
+                        </nav>
+
+                    </div> <!-- End: .col-xs-9 -->
+                </div> <!-- End: .row -->
+            </div> <!-- End: .container -->
+        </header><!-- /header -->
+
+<section class="features-section-1 relative background-light">
+                    <div class="row section-separator">
+                    <div class="navbar navbar-inverse navbar-fixed-left" style="margin-left: 13px; margin-right: 13px">
+    <!-- <a class="navbar-brand" href="#">Tags</a> -->
+  <ul class="nav navbar-nav">
+  <!--  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+     <ul class="dropdown-menu" role="menu">
+      <li><a href="#">Sub Menu1</a></li>
+      <li><a href="#">Sub Menu2</a></li>
+      <li><a href="#">Sub Menu3</a></li>
+      <li class="divider"></li>
+      <li><a href="#">Sub Menu4</a></li>
+      <li><a href="#">Sub Menu5</a></li>
+     </ul>
+   </li> -->
+   <li><a href="#">Get Started</a></li>
+   <li><a href="#">My sessions</a></li>
+  </ul>
+</div>
+ <div class="col-xs-12" style="display: flex; flex-flow: column nowrap; margin-left: 37px">
+   <div class="container">
+                        <ul class="nav nav-tabs">
+                            <li class="active""><a href="#active" data-toggle="tab">Active</a></li>
+                            <li><a href="#approved" data-toggle="tab">Approved</a></li>
+                            <li><a href="#declined" data-toggle="tab">Declined</a></li>
+                        </ul>
+                <div class="panel-body">
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active" id="active" style="display: flex; flex-flow: column;">
+                            <div class="col-xs-12" style="margin: auto">
+                <div class="card card-inverse card-info">
+                    <div class="card-block">
+                        <figure class="profile profile-inline" style="margin-top: 10px">
+                            <img src="http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif" class="profile-avatar" alt="">
+                        </figure>
+                        <h4 class="card-title">Tawshif Ahsan Khan</h4>
+                        <div class="card-text">
+                            Tawshif is a web designer living in Bangladesh.
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <small>Fees: 25$ per day</small>
+                        <button class="btn btn-info float-right" style=" margin-left: 5px;padding: 5px; float: right;">Resume Session</button>
+                        <button class="btn btn-info float-right" style=" padding: 5px; float: right;">Chat</button>
+                    </div>
+                </div>
+            </div>
+            
+        <div class="col-xs-12" style="margin: auto">
+                <div class="card card-inverse card-info">
+
+                </div>
+            </div>
+
+        <div class="col-xs-12" style="margin: auto">
+                <div class="card card-inverse card-info">
+
+                </div>
+            </div>
+                        </div>
+                        <div class="tab-pane fade" id="approved">Default 2</div>
+                        <div class="tab-pane fade" id="declined">Default 3</div>
+                    </div>
+                </div>
+                </div>
+ </div>
+
+ </section>
+<div class="chatbox chatbox--tray chatbox--empty" style="z-index: 1000">
+    <div class="chatbox__title">
+        <h5><a href="#">Tawshif Ahsan Khan</a></h5>
+        <button class="chatbox__title__tray">
+            <span></span>
+        </button>
+        <button class="chatbox__title__close">
+            <span>
+                <svg viewBox="0 0 12 12" width="12px" height="12px">
+                    <line stroke="#FFFFFF" x1="11.75" y1="0.25" x2="0.25" y2="11.75"></line>
+                    <line stroke="#FFFFFF" x1="11.75" y1="11.75" x2="0.25" y2="0.25"></line>
+                </svg>
+            </span>
+        </button>
+    </div>
+    <div class="chatbox__body">
+        <div class="chatbox__body__message chatbox__body__message--left">
+            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" alt="Picture">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="chatbox__body__message chatbox__body__message--right">
+            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/arashmil/128.jpg" alt="Picture">
+            <p>Nulla vel turpis vulputate, tincidunt lectus sed, porta arcu.</p>
+        </div>
+        <div class="chatbox__body__message chatbox__body__message--left">
+            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" alt="Picture">
+            <p>Curabitur consequat nisl suscipit odio porta, ornare blandit ante maximus.</p>
+        </div>
+        <div class="chatbox__body__message chatbox__body__message--right">
+            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/arashmil/128.jpg" alt="Picture">
+            <p>Cras dui massa, placerat vel sapien sed, fringilla molestie justo.</p>
+        </div>
+        <div class="chatbox__body__message chatbox__body__message--right">
+            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/arashmil/128.jpg" alt="Picture">
+            <p>Praesent a gravida urna. Mauris eleifend, tellus ac fringilla imperdiet, odio dolor sodales libero, vel mattis elit mauris id erat. Phasellus leo nisi, convallis in euismod at, consectetur commodo urna.</p>
+        </div>
+    </div>
+    <form class="chatbox__credentials">
+        <div class="form-group">
+            <label for="inputName">Name:</label>
+            <input type="text" class="form-control" id="inputName" required>
+        </div>
+        <div class="form-group">
+            <label for="inputEmail">Email:</label>
+            <input type="email" class="form-control" id="inputEmail" required>
+        </div>
+        <button type="submit" class="btn btn-success btn-block">Enter Chat</button>
+    </form>
+    <textarea class="chatbox__message" placeholder="Write something interesting"></textarea>
+</div>
+    </body>
+
+
+
+<!--         <h1>Mentor.io</h1>
+
+        <hr> </hr>
+
+        <a href="/mentor/register_student/">Register as a Student!</a><br />
+        <br>
+        <a href="/mentor/register_mentor/">Register as a Mentor!</a><br /><br>
+        <a href="/mentor/about/">About</a><br />
+
+        <a href="{% static 'docs/overview.pdf' %}">View Project Overview</a><br/>
+ -->
+
+         <!-- SCRIPTS
+        ========================================-->
+        <script src="{% static 'js/plagin-js/jquery-1.11.3.js' %}"></script>
+        <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/plagin-js/plagin.js' %}"></script>
+
+        <!-- Custom Script
+        ==========================================-->
+        <script src="{% static 'js/custom-scripts.js' %}"></script>
+        <script src="{% static 'js/chatbox.js' %}"></script>
+
+    </body>
+
+</html>
