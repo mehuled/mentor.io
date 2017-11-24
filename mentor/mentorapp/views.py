@@ -97,6 +97,10 @@ def apply(request):
     context_list={}
     return render(request,"mentorapp/application.html",context_list)
 
+def course(request):
+    context_list={}
+    return render(request,"mentorapp/course.html",context_list)
+
 def myauthenticate(username,password):
     context_list=Mentor.objects.all()
     flag=False

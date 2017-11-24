@@ -15,4 +15,5 @@ urlpatterns = [
         url(r'^search/$', views.search, name='search'),
         url(r'^profile/$', views.profile, name='profile'),
         url(r'^mysession/$', views.mysession, name='mysession'),
+        url(r'^course/$', views.course, name='course'),
 ]
