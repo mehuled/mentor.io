@@ -915,7 +915,7 @@ h6 {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: transparent;
-  z-index: 100;
+  z-index: 10001;
 }
 .main-navbar-top .okayNav-header {
   background-color: transparent;
@@ -2188,4 +2188,4 @@ span.round-tab:hover {
         position: absolute;
         left: 35%;
     }
-}
+
